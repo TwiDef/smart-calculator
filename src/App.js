@@ -1,19 +1,22 @@
+import React, { useState } from 'react';
+import Calculator from './components/Calculator/Calculator';
 
-import { Box, Text } from '@chakra-ui/react';
 import './App.css';
-import Numbers from './components/Numbers';
+
 
 function App() {
+    const [counts, setCounts] = useState('0')
+    const [result, setResult] = useState('')
+
     return (
-        <div className="App">
-            <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                h="100vh">
-                <Numbers />
-            </Box>
-        </div>
+        <>
+            <div className="background"></div>
+
+            <div className="App">
+                <Calculator counts={counts} />
+            </div >
+        </>
+
     );
 }
 

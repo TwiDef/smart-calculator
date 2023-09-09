@@ -1,0 +1,23 @@
+.App {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("./img/calc-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+
+
