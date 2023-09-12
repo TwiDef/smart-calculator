@@ -4,7 +4,8 @@ import './Button.css';
 const Button = ({ value }) => {
 
     return (
-        <button value={value} className='button'>
+        <button value={value}
+            className={value === "=" ? "button-equals" : "button"}>
             {value}
         </button>
     );

@@ -9,14 +9,14 @@ const ButtonBox = ({ handleClearAll, handleClearLast, handleTypeNum }) => {
         ["7", "8", "9", "*"],
         ["4", "5", "6", "-"],
         ["1", "2", "3", "+"],
-        [" ", "0", ".", "="],
+        [".", "0", "="],
     ]
 
     return (
         <div className='button-box'>
             {buttonValues.flat().map((btn, i) =>
                 <div
-                    className='button'
+
                     key={i}
                     onClick={
                         btn === "AC" ?

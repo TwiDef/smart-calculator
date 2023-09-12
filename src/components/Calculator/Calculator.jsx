@@ -30,10 +30,13 @@ const Calculator = (props) => {
     }
 
     const typeNum = (e) => {
+        e.preventDefault()
         setCalc({
             ...calc,
-            num: calc.num += e.target.value
+            num: (calc.num += e.target.value).replace(/^0/, "")
         })
+
+
     }
 
     return (

@@ -1,3 +1,19 @@
-.button {
+.button,
+.button-equals {
     background-color: #aaadaf;
+    transition: 0.2s all;
 }
+
+.button:active,
+.button-equals:active {
+    transform: scale(0.98);
+} 
+
+.button-equals {
+    width: 200%;
+    height: 100%;
+    font-size: 2rem;
+    background-color: #ea8706;
+    cursor: pointer;
+}
+
