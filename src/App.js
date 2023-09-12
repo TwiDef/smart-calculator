@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calculator from './components/Calculator/Calculator';
-
 import './App.css';
-
+import Display from './components/Display/Display';
+import ButtonBox from './components/ButtonBox/ButtonBox';
 
 function App() {
-    const [counts, setCounts] = useState('0')
-    const [result, setResult] = useState('')
-
     return (
         <>
-            <div className="background"></div>
+            <div className='background'></div>
 
-            <div className="App">
-                <Calculator counts={counts} />
-            </div >
+            <div className='App'>
+                <Calculator />
+            </div>
         </>
+
 
     );
 }

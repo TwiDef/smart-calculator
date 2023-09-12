@@ -1,17 +1,14 @@
-.calc-display {
-    height: 20%;
+.display {
     width: 100%;
-    background-color: rgb(52, 52, 52);
-    color: #ffffff;
-    border-radius: 10px;
+    height: 20%;
     display: flex;
-    align-items: center;
     justify-content: start;
-    margin-bottom: 1px;
-    border: 1px solid #adacac;
+    align-items: center;
+    background: #b4bcca;
 }
 
-.calc-display-result {
-    padding-left: 20px;
-    font-size: 50px;
+.display-value {
+    display: block;
+    padding: 0 5%;
+    font-size: 2rem;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import './Display.css';
 
-const Display = (props) => {
+const Display = ({ value }) => {
     return (
-        <div className="calc-display">
-            <div className="calc-display-result">{props.counts}</div>
+        <div className='display'>
+            <span className='display-value'>{value}</span>
         </div>
     );
 }
