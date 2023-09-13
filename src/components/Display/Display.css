@@ -5,6 +5,7 @@
     justify-content: start;
     align-items: center;
     background: #b4bcca;
+    border-radius: 4px;
 }
 
 .display-value {

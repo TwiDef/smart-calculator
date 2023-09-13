@@ -2,7 +2,13 @@ import React from 'react';
 import Button from '../Button/Button';
 import './ButtonBox.css';
 
-const ButtonBox = ({ handleClearAll, handleClearLast, handleTypeNum }) => {
+const ButtonBox = ({
+    handleClearAll,
+    handleClearLast,
+    handleTypeNum,
+    handleTypeSign,
+    handleEqualAct
+}) => {
 
     const buttonValues = [
         ["AC", "<", "%", "/"],
@@ -16,14 +22,17 @@ const ButtonBox = ({ handleClearAll, handleClearLast, handleTypeNum }) => {
         <div className='button-box'>
             {buttonValues.flat().map((btn, i) =>
                 <div
-
                     key={i}
                     onClick={
                         btn === "AC" ?
                             handleClearAll
                             : btn === "<" ?
                                 handleClearLast
-                                : handleTypeNum
+                                : btn === "/" || btn === "*" || btn === "-" || btn === "+" ?
+                                    handleTypeSign
+                                    : btn === "=" ?
+                                        handleEqualAct
+                                        : handleTypeNum
                     }>
                     <Button value={btn} />
                 </div>)}

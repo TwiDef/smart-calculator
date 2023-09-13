@@ -2,6 +2,7 @@
 .button-equals {
     background-color: #aaadaf;
     transition: 0.2s all;
+    border-radius: 4px;
 }
 
 .button:active,
