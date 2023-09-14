@@ -1,4 +1,7 @@
 .calculator {
     width: 40%;
     height: 60%;
+    background-color: #23282b;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
 }

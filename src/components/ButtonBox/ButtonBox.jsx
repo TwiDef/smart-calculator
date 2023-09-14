@@ -7,7 +7,9 @@ const ButtonBox = ({
     handleClearLast,
     handleTypeNum,
     handleTypeSign,
-    handleEqualAct
+    handleEqualAct,
+    handleTypeDot,
+    handleTypePercent
 }) => {
 
     const buttonValues = [
@@ -32,7 +34,11 @@ const ButtonBox = ({
                                     handleTypeSign
                                     : btn === "=" ?
                                         handleEqualAct
-                                        : handleTypeNum
+                                        : btn === "." ?
+                                            handleTypeDot
+                                            : btn === "%" ?
+                                                handleTypePercent
+                                                : handleTypeNum
                     }>
                     <Button value={btn} />
                 </div>)}

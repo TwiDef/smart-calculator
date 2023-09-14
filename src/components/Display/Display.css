@@ -4,12 +4,13 @@
     display: flex;
     justify-content: start;
     align-items: center;
-    background: #b4bcca;
+    background-color: #23282b;
+    color: #f0f0ff;
     border-radius: 4px;
 }
 
 .display-value {
     display: block;
     padding: 0 5%;
-    font-size: 2rem;
+    font-size: 2.4rem;
 }

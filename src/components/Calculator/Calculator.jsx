@@ -3,7 +3,7 @@ import Display from '../Display/Display';
 import ButtonBox from '../ButtonBox/ButtonBox';
 import './Calculator.css';
 
-const Calculator = (props) => {
+const Calculator = () => {
     let [calc, setCalc] = useState({
         sign: "",
         num: 0,
@@ -31,10 +31,13 @@ const Calculator = (props) => {
 
     const typeNum = (e) => {
         e.preventDefault()
-        setCalc({
-            ...calc,
-            num: (calc.num += e.target.value).replace(/^0/, "")
-        })
+
+        if (calc.num.length !== 16) {
+            setCalc({
+                ...calc,
+                num: (calc.num += e.target.value).replace(/^0/, "")
+            })
+        }
     }
 
     const typeSign = (e) => {
@@ -50,9 +53,11 @@ const Calculator = (props) => {
     const equalAct = () => {
 
         if (calc.sign && calc.num) {
-            console.log(calc.res, calc.sign, calc.num)
             const math = (a, b, sign) => {
                 if (sign === "/") {
+                    if (b === 0) {
+                        return 'Cant divide by 0'
+                    }
                     return a / b
                 }
                 if (sign === "*") {
@@ -74,15 +79,37 @@ const Calculator = (props) => {
         }
     }
 
+    const typeDot = (e) => {
+        e.preventDefault()
+        setCalc({
+            ...calc,
+            num: `${calc.num}${e.target.value}`
+        })
+    }
+
+    const typePercent = () => {
+        let num = calc.num ? parseFloat(calc.num) : 0
+        let res = calc.res ? parseFloat(calc.res) : 0
+
+        setCalc({
+            ...calc,
+            num: (num /= Math.pow(100, 1)),
+            res: (res /= Math.pow(100, 1)),
+            sign: ""
+        })
+    }
+
     return (
         <div className='calculator'>
-            <Display value={calc.num ? calc.num : calc.res} />
+            <Display value={String(calc.num ? calc.num : calc.res)} />
             <ButtonBox
                 handleClearAll={clearAll}
                 handleClearLast={clearLast}
                 handleTypeNum={typeNum}
                 handleTypeSign={typeSign}
-                handleEqualAct={equalAct} />
+                handleEqualAct={equalAct}
+                handleTypeDot={typeDot}
+                handleTypePercent={typePercent} />
         </div>
     );
 }

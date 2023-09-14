@@ -1,20 +1,32 @@
 .button,
 .button-equals {
-    background-color: #aaadaf;
-    transition: 0.2s all;
+    background-color: #394145;
+    color: #f0f0ff;
+    transition: 0.3s all;
     border-radius: 4px;
 }
 
 .button:active,
 .button-equals:active {
-    transform: scale(0.98);
+    transform: scale(0.96);
 } 
+
+.button:active {
+    background-color: #637076;
+}
 
 .button-equals {
     width: 200%;
     height: 100%;
     font-size: 2rem;
-    background-color: #ea8706;
+    background-color: #f98f06;
     cursor: pointer;
+    color: #23282b;
+    font-weight: bold;
 }
+
+.button-equals:active {
+    background-color: #f96306;
+}
+
 
