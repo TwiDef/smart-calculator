@@ -9,7 +9,6 @@ function App() {
             <div className='background'></div>
 
             <div className='App'>
-                {/* <Calculator /> */}
                 <CalculatorNew />
             </div>
         </>

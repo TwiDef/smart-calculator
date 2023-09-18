@@ -3,18 +3,13 @@ import Button from '../Button/Button';
 import './ButtonBox.css';
 
 const ButtonBox = ({
-    handleClearAll,
-    handleClearLast,
-    handleTypeNum,
-    handleTypeSign,
-    handleEqualAct,
     handleTypeDot,
-    handleTypePercent,
     handleOnTypeNum,
     handleOnClearAll,
     handleOnClearLast,
     handleOnTypeSign,
-    handleOnEqual
+    handleOnEqual,
+    handleOnTypePercent
 }) => {
 
     const buttonValues = [
@@ -43,7 +38,7 @@ const ButtonBox = ({
                                         : btn === "." ?
                                             handleTypeDot
                                             : btn === "%" ?
-                                                handleTypePercent
+                                                handleOnTypePercent
                                                 : handleOnTypeNum
                     }>
                     <Button value={btn} />

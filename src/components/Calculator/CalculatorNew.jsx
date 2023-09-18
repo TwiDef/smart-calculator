@@ -23,6 +23,7 @@ const CalculatorNew = (props) => {
             type: "clearAll",
         }
     )
+
     const onClearLast = () => dispatch(
         {
             type: "clearLast",
@@ -39,6 +40,11 @@ const CalculatorNew = (props) => {
             type: "equalAct"
         }
     )
+    const onTypePercent = () => dispatch(
+        {
+            type: "typePercent"
+        }
+    )
 
     return (
         <div className='calculator'>
@@ -49,13 +55,8 @@ const CalculatorNew = (props) => {
                 handleOnClearLast={onClearLast}
                 handleOnTypeSign={onTypeSign}
                 handleOnEqual={onEqual}
-                /* handleClearAll={clearAll}
-                handleClearLast={clearLast}
-                handleTypeNum={typeNum}
-                handleTypeSign={typeSign}
-                handleEqualAct={equalAct}
-                handleTypeDot={typeDot}
-                handleTypePercent={typePercent} */ />
+                handleOnTypePercent={onTypePercent}
+            />
         </div>
     );
 }

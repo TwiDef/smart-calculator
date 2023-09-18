@@ -19,6 +19,12 @@ function calcReducer(state, action) {
                 res: 0
             }
         case "clearLast":
+            if (state.num === 0) {
+                return {
+                    ...state,
+                    num: 0
+                }
+            }
             if (state.num !== 0) {
                 return {
                     ...state,
@@ -55,6 +61,12 @@ function calcReducer(state, action) {
                     sign: "",
                     num: 0
                 }
+            }
+        case "typePercent":
+            return {
+                num: (state.num /= Math.pow(100, 1)),
+                res: (state.res /= Math.pow(100, 1)),
+                sign: ""
             }
         default:
             return state
