@@ -9,7 +9,11 @@ const ButtonBox = ({
     handleTypeSign,
     handleEqualAct,
     handleTypeDot,
-    handleTypePercent
+    handleTypePercent,
+    handleOnTypeNum,
+    handleOnClearAll,
+    handleOnClearLast,
+    handleOnTypeSign
 }) => {
 
     const buttonValues = [
@@ -27,18 +31,18 @@ const ButtonBox = ({
                     key={i}
                     onClick={
                         btn === "AC" ?
-                            handleClearAll
+                            handleOnClearAll
                             : btn === "<" ?
-                                handleClearLast
+                                handleOnClearLast
                                 : btn === "/" || btn === "*" || btn === "-" || btn === "+" ?
-                                    handleTypeSign
+                                    handleOnTypeSign
                                     : btn === "=" ?
                                         handleEqualAct
                                         : btn === "." ?
                                             handleTypeDot
                                             : btn === "%" ?
                                                 handleTypePercent
-                                                : handleTypeNum
+                                                : handleOnTypeNum
                     }>
                     <Button value={btn} />
                 </div>)}

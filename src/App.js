@@ -1,8 +1,7 @@
 import React from 'react';
 import Calculator from './components/Calculator/Calculator';
 import './App.css';
-import Display from './components/Display/Display';
-import ButtonBox from './components/ButtonBox/ButtonBox';
+import CalculatorNew from './components/Calculator/CalculatorNew';
 
 function App() {
     return (
@@ -10,7 +9,8 @@ function App() {
             <div className='background'></div>
 
             <div className='App'>
-                <Calculator />
+                {/* <Calculator /> */}
+                <CalculatorNew />
             </div>
         </>
 
