@@ -7,8 +7,8 @@ import './Calculator.css';
 const CalculatorNew = (props) => {
     const initialState = {
         sign: "",
-        num: "0",
-        res: "0"
+        num: 0,
+        res: 0
     }
     const [state, dispatch] = useReducer(calcReducer, initialState)
 
@@ -34,16 +34,21 @@ const CalculatorNew = (props) => {
             payload: { sign: e.target.value }
         }
     )
-
+    const onEqual = () => dispatch(
+        {
+            type: "equalAct"
+        }
+    )
 
     return (
         <div className='calculator'>
-            <Display value={state.num} />
+            <Display value={String(state.num ? state.num : state.res)} />
             <ButtonBox
                 handleOnTypeNum={onTypeNum}
                 handleOnClearAll={onClearAll}
                 handleOnClearLast={onClearLast}
                 handleOnTypeSign={onTypeSign}
+                handleOnEqual={onEqual}
                 /* handleClearAll={clearAll}
                 handleClearLast={clearLast}
                 handleTypeNum={typeNum}

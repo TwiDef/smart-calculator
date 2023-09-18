@@ -15,10 +15,11 @@ function calcReducer(state, action) {
         case "clearAll":
             return {
                 ...state,
-                num: "0"
+                num: "0",
+                res: 0
             }
         case "clearLast":
-            if (state.num !== "") {
+            if (state.num !== 0) {
                 return {
                     ...state,
                     num: (state.num).slice(0, -1)
@@ -26,10 +27,34 @@ function calcReducer(state, action) {
             }
         case "typeSign":
             return {
-                /* ...state, */
                 sign: action.payload.sign,
                 res: !state.res && state.num ? state.num : state.res,
                 num: 0
+            }
+        case "equalAct":
+            if (state.sign && state.num) {
+                const math = (a, b, sign) => {
+                    if (sign === "/") {
+                        if (b === 0) {
+                            return "Can't divide by 0"
+                        }
+                        return a / b
+                    }
+                    if (state.sign === "*") {
+                        return a * b
+                    }
+                    if (state.sign === "-") {
+                        return a - b
+                    }
+                    if (state.sign === "+") {
+                        return a + b
+                    }
+                }
+                return {
+                    res: math(Number(state.res), Number(state.num), state.sign),
+                    sign: "",
+                    num: 0
+                }
             }
         default:
             return state

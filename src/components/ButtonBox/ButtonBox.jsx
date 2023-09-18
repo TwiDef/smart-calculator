@@ -13,7 +13,8 @@ const ButtonBox = ({
     handleOnTypeNum,
     handleOnClearAll,
     handleOnClearLast,
-    handleOnTypeSign
+    handleOnTypeSign,
+    handleOnEqual
 }) => {
 
     const buttonValues = [
@@ -23,6 +24,7 @@ const ButtonBox = ({
         ["1", "2", "3", "+"],
         [".", "0", "="],
     ]
+
 
     return (
         <div className='button-box'>
@@ -37,7 +39,7 @@ const ButtonBox = ({
                                 : btn === "/" || btn === "*" || btn === "-" || btn === "+" ?
                                     handleOnTypeSign
                                     : btn === "=" ?
-                                        handleEqualAct
+                                        handleOnEqual
                                         : btn === "." ?
                                             handleTypeDot
                                             : btn === "%" ?

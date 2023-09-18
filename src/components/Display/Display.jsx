@@ -7,7 +7,7 @@ const Display = ({ value }) => {
         <div className='display'>
             <span className='display-value'>{
                 /* value.length > 15 ? `${value.slice(0, 15)}e^` : value */
-                value ? value : "0"
+                value ? value : 0
             }</span>
         </div>
     );
